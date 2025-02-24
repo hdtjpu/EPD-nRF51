@@ -16,17 +16,13 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/util/app_error.c \
   $(SDK_ROOT)/components/libraries/util/app_error_weak.c \
   $(SDK_ROOT)/components/libraries/timer/app_timer.c \
+  $(SDK_ROOT)/components/libraries/scheduler/app_scheduler.c \
   $(SDK_ROOT)/components/libraries/util/app_util_platform.c \
   $(SDK_ROOT)/components/libraries/fstorage/fstorage.c \
   $(SDK_ROOT)/components/drivers_nrf/common/nrf_drv_common.c \
   $(SDK_ROOT)/components/drivers_nrf/clock/nrf_drv_clock.c \
+  $(SDK_ROOT)/components/drivers_nrf/gpiote/nrf_drv_gpiote.c \
   $(SDK_ROOT)/components/drivers_nrf/spi_master/nrf_drv_spi.c \
-  $(PROJ_DIR)/main.c \
-  $(PROJ_DIR)/EPD/DEV_Config.c \
-  $(PROJ_DIR)/EPD/EPD_4in2.c \
-  $(PROJ_DIR)/EPD/EPD_4in2_V2.c \
-  $(PROJ_DIR)/EPD/EPD_4in2b_V2.c \
-  $(PROJ_DIR)/EPD/EPD_ble.c \
   $(SDK_ROOT)/components/drivers_ext/segger_rtt/RTT_Syscalls_GCC.c \
   $(SDK_ROOT)/components/drivers_ext/segger_rtt/SEGGER_RTT.c \
   $(SDK_ROOT)/components/drivers_ext/segger_rtt/SEGGER_RTT_printf.c \
@@ -36,17 +32,28 @@ SRC_FILES += \
   $(SDK_ROOT)/components/ble/common/ble_srv_common.c \
   $(SDK_ROOT)/components/toolchain/gcc/gcc_startup_nrf51.s \
   $(SDK_ROOT)/components/toolchain/system_nrf51.c \
-  $(SDK_ROOT)/components/softdevice/common/softdevice_handler/softdevice_handler.c
+  $(SDK_ROOT)/components/softdevice/common/softdevice_handler/softdevice_handler.c \
+  $(PROJ_DIR)/main.c \
+  $(PROJ_DIR)/EPD/UC8176.c \
+  $(PROJ_DIR)/EPD/EPD_driver.c \
+  $(PROJ_DIR)/EPD/EPD_ble.c \
+  $(PROJ_DIR)/GUI/Calendar.c \
+  $(PROJ_DIR)/GUI/Lunar.c \
+  $(PROJ_DIR)/GUI/fonts.c \
+  $(PROJ_DIR)/GUI/Adafruit_GFX.c \
+  $(PROJ_DIR)/GUI/u8g2_font.c
 
 # Include folders common to all targets
 INC_FOLDERS += \
   $(PROJ_DIR)/config \
   $(PROJ_DIR)/EPD \
+  $(PROJ_DIR)/GUI \
   $(SDK_ROOT)/components/toolchain \
   $(SDK_ROOT)/components/drivers_nrf/clock \
   $(SDK_ROOT)/components/drivers_nrf/hal \
   $(SDK_ROOT)/components/drivers_nrf/common \
   $(SDK_ROOT)/components/drivers_nrf/delay \
+  $(SDK_ROOT)/components/drivers_nrf/gpiote \
   $(SDK_ROOT)/components/drivers_nrf/spi_master \
   $(SDK_ROOT)/components/drivers_ext/segger_rtt \
   $(SDK_ROOT)/components/libraries/fstorage \
@@ -54,6 +61,7 @@ INC_FOLDERS += \
   $(SDK_ROOT)/components/libraries/log \
   $(SDK_ROOT)/components/libraries/log/src \
   $(SDK_ROOT)/components/libraries/timer \
+  $(SDK_ROOT)/components/libraries/scheduler \
   $(SDK_ROOT)/components/libraries/util \
   $(SDK_ROOT)/components/device \
   $(SDK_ROOT)/components/toolchain \
